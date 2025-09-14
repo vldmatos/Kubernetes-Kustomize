@@ -73,3 +73,28 @@ Notas:
 - Certifique-se de possuir um controlador de Ingress (por exemplo, ingress-nginx) instalado e que a `ingressClassName: nginx` exista.
 - Adicione entradas no seu DNS/hosts apontando para o IP do Ingress Controller:
   - nginx-dev.local, nginx-stg.local, nginx-prod.local
+
+
+## Resultado
+
+Foi integrado o projeto em um cluster com ArgoCD
+
+![](/images/001.png)  
+
+### Ambiente: Development
+![](/images/002.png)  
+- application  
+![](/images/005.png)  
+---
+
+### Ambiente: Staging
+![](/images/003.png)  
+- application  
+![](/images/006.png)  
+---
+
+### Ambiente: Production
+![](/images/004.png)  
+- application  
+![](/images/007.png)  
+---
