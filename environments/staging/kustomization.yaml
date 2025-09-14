@@ -1,0 +1,33 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: demo-staging
+
+resources:
+  - ../../application
+  - namespace.yaml
+  - ingress.yaml
+
+replicas:
+  - name: nginx-app
+    count: 2
+
+configMapGenerator:
+  - name: web-content
+    files:
+      - index.html
+    options:
+      disableNameSuffixHash: true
+
+secretGenerator:
+  - name: app-secret
+    literals:
+      - APP_ENV=staging
+      - APP_USER=stg_user
+      - APP_TOKEN=stg-token-456
+    type: Opaque
+    options:
+      disableNameSuffixHash: true
+
+patchesStrategicMerge:
+  - patch-resources.yaml
