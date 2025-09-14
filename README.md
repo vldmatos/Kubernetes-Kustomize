@@ -79,7 +79,10 @@ Notas:
 
 Foi integrado o projeto em um cluster com ArgoCD
 
-![](/images/001.png)  
+![](/images/001.png)   
+- Deployments  
+![](/images/008.png)  
+---
 
 ### Ambiente: Development
 ![](/images/002.png)  
